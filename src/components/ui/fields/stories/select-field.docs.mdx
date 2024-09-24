@@ -1,0 +1,67 @@
+import { Meta, Primary, Controls, Story, Source, Subtitle, Title, Description } from '@storybook/blocks';
+import * as SelectFieldStories from './select-field.stories';
+
+<Meta of={SelectFieldStories} />
+
+<Title of={SelectFieldStories} />
+<Description of={SelectFieldStories} />
+
+```js
+import { SelectField } from "@cmp/ui/fields/SelectField";
+```
+
+<Story of={SelectFieldStories.SelectFieldStory} />
+<Source of={SelectFieldStories.SelectFieldStory} />
+
+## OR Object Items
+
+### With Icon
+
+<Story of={SelectFieldStories.SelectFieldWithIconStory} />
+<Source of={SelectFieldStories.SelectFieldWithIconStory} />
+
+### With Image
+
+<Story of={SelectFieldStories.SelectFieldWithImageStory} />
+<Source of={SelectFieldStories.SelectFieldWithImageStory} />
+
+### With Renderer Callback
+
+The renderer callback overrides the option UI.
+
+```tsx
+<SelectField
+...
+renderElement={(item) => {
+    return <span style={{ color: "red" }}>{item as string}</span>;
+}}
+...
+/>
+```
+
+The Item arg is the value of the option passed through `items`. It can be a String or an Object
+
+<Story of={SelectFieldStories.SelectFieldWithRendererCallbackStory} />
+<Source of={SelectFieldStories.SelectFieldWithRendererCallbackStory} />
+
+You can use the Select Field UI Option Component to use its style, and only override the structure of label, icon or image.
+
+<Story of={SelectFieldStories.SelectFieldWithRendererCallbackWithOptionUIStory} />
+
+```tsx
+<SelectField
+...
+renderElement={(item) => {
+    return (
+        <SelectField.Option item={item}>
+          <span style={{ color: "red" }}>{item as string}</span>
+        </SelectField.Option>
+    );
+}}
+...
+/>
+```
+
+## Props
+
+<Controls />

@@ -72,6 +72,8 @@
         font-size: 0.9em;
         display: block;
         font-family: inherit;
+        word-break: keep-all;
+        min-width: max-content;
       }
       .option_icon {
         color: $gray-500;

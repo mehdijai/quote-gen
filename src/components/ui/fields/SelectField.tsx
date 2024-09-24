@@ -15,6 +15,7 @@ export default function SelectField({
   label,
   onValueChange,
   placeholder,
+  withFieldWrapper,
 }: FormUI.SelectFieldProps) {
   const [activeElement, setActiveElement] =
     useState<FormUI.SelectSelectedValue>(null);
@@ -32,7 +33,7 @@ export default function SelectField({
   onValueChange?.(stringifiedValue ?? null);
 
   return (
-    <Field label={label}>
+    <Field label={label} withFieldWrapper={withFieldWrapper}>
       <SelectFieldContext.Provider value={{ activeElement, setActiveElement }}>
         <div
           ref={wrapperRef}
