@@ -17,4 +17,7 @@
   &::placeholder {
     opacity: 0.6;
   }
+  &:invalid {
+    outline: 2px solid $error-200;
+  }
 }

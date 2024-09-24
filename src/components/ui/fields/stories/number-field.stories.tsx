@@ -1,18 +1,18 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import TextField from "../TextField";
+import NumberField from "../NumberField";
 import fieldBaseArgtypes from "./field-base-argtypes";
 
-const meta: Meta<typeof TextField> = {
-  title: "Design System/UI/Text Field",
-  component: TextField,
+const meta: Meta<typeof NumberField> = {
+  title: "Design System/UI/Number Field",
+  component: NumberField,
   parameters: {
     docs: {
       description: {
-        component: `Text Field UI Component.`,
+        component: `Number Field UI Component.`,
       },
     },
   },
-  render: (args) => <TextField {...args} />,
+  render: (args) => <NumberField {...args} />,
   decorators: [
     (Story) => (
       <div
@@ -31,20 +31,33 @@ const meta: Meta<typeof TextField> = {
   args: {
     withFieldWrapper: false,
   },
-  argTypes: fieldBaseArgtypes
-};
-
-export default meta;
-type Story = StoryObj<typeof TextField>;
-
-export const TextFieldStory: Story = {
-  args: {
-    label: "Label",
-    placeholder: "Placeholder",
+  argTypes: {
+    ...fieldBaseArgtypes,
+    defaultValue: {
+      ...fieldBaseArgtypes.defaultValue,
+      control: "number",
+      table: {
+        ...fieldBaseArgtypes.defaultValue.table,
+        type: {
+          summary: "number | undefined",
+        },
+      },
+    },
   },
 };
 
-export const TextFieldWithWrapper: Story = {
+export default meta;
+type Story = StoryObj<typeof NumberField>;
+
+export const NumberFieldStory: Story = {
+  args: {
+    label: "Label",
+    placeholder: "Placeholder",
+    defaultValue: 57,
+  },
+};
+
+export const NumberFieldWithWrapper: Story = {
   args: {
     label: "Label",
     placeholder: "Placeholder",
