@@ -1,0 +1,82 @@
+$colors-map: (
+  "default": (
+    "main": $gray-500,
+    "complementary": $white,
+  ),
+  "primary": (
+    "main": $crimson-300,
+    "complementary": $white,
+  ),
+  "secondary": (
+    "main": $blue-300,
+    "complementary": $white,
+  ),
+  "warning": (
+    "main": $warn-300,
+    "complementary": $white,
+  ),
+  "error": (
+    "main": $error-300,
+    "complementary": $white,
+  ),
+);
+
+$variants-map: ("default", "filled", "outlined", "text", "tonal");
+
+@mixin button-variant($variant, $color) {
+  $main-color: map-get($color, "main");
+  $comp-color: map-get($color, "complementary");
+
+  @if ($variant == "filled" or $variant == "default") {
+    background-color: $main-color;
+    color: $comp-color;
+    &:hover {
+      background-color: $comp-color;
+      color: $main-color;
+      box-shadow: unset;
+      border-radius: 2px;
+      outline: 1px solid $main-color;
+      outline-offset: -0px;
+    }
+  } @else if($variant == "outlined") {
+    background-color: $comp-color;
+    color: $main-color;
+    outline: 1px solid $main-color;
+    outline-offset: -0px;
+    &:hover {
+      background-color: $main-color;
+      color: $comp-color;
+      box-shadow: unset;
+      border-radius: 2px;
+    }
+  } @else if ($variant == "tonal") {
+    background-color: rgba($main-color, 0.1);
+    color: $main-color;
+    &:hover {
+      background-color: rgba($main-color, 0.2);
+      color: $main-color;
+      box-shadow: unset;
+      border-radius: 2px;
+      outline: 1px solid rgba($main-color, 0.25);
+      outline-offset: -0px;
+    }
+  } @else if ($variant == "text") {
+    background-color: transparent;
+    color: $main-color;
+    &:hover {
+      background-color: rgba($main-color, 0.1);
+    }
+  }
+}
+
+@mixin button-style() {
+  @each $variant in $variants-map {
+    &.v-#{$variant} {
+      @each $color-name, $color-obj in $colors-map {
+        &.c-#{$color-name} {
+          @include button-variant($variant, $color-obj);
+        }
+      }
+    }
+  }
+}

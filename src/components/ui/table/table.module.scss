@@ -1,0 +1,79 @@
+$border-radius: 0.3rem;
+$cell-bg-color: $white;
+$cell-text-color: $gray-600;
+$cell-hl-bg-color: darken($cell-bg-color, 2);
+$cell-border-color: $gray-100;
+$cell-primary-bg-color: $crimson-300;
+$cell-primary-color: $white;
+$cell-primary-border-color: darken($crimson-300, 2);
+
+.table {
+  margin-top: 0.5rem;
+  width: 100%;
+  text-align: start;
+  border-spacing: 0;
+  border-radius: $border-radius;
+  overflow: hidden;
+
+  th,
+  td {
+    text-align: start;
+    padding: 0.7rem;
+  }
+
+  thead,
+  tbody {
+    td,
+    th {
+      color: $cell-text-color;
+      background-color: $cell-bg-color;
+      border-bottom: 1px solid $cell-border-color;
+      &:last-child {
+        border-left: 1px solid $cell-border-color;
+      }
+    }
+  }
+  th {
+    border-top: 1px solid $cell-border-color;
+  }
+  thead th:first-child,
+  tbody td:first-child {
+    background-color: $cell-hl-bg-color;
+    border-left: 1px solid $cell-border-color;
+  }
+  thead th:last-child,
+  tbody td:last-child {
+    border-right: 1px solid $cell-border-color;
+  }
+  thead th:last-child {
+    border-top-right-radius: $border-radius;
+  }
+  thead th:first-child {
+    border-top-left-radius: $border-radius;
+  }
+  tbody tr:last-child td:first-child {
+    border-bottom-left-radius: $border-radius;
+  }
+  tfoot td:not(:empty) {
+    background: $cell-primary-bg-color;
+    color: $cell-primary-color;
+    font-weight: 600;
+    &:last-child {
+      border-bottom-right-radius: $border-radius;
+      border-left: 1px solid $cell-primary-border-color;
+    }
+    &:nth-child(2) {
+      border-bottom-left-radius: $border-radius;
+    }
+  }
+  .empty-row td {
+    background-color: $cell-bg-color !important;
+    p {
+      text-align: center;
+      font-size: 0.8rem;
+      font-weight: 500;
+      font-style: italic;
+      color: $gray-400;
+    }
+  }
+}

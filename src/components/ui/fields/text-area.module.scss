@@ -1,0 +1,20 @@
+.text-area {
+  background-color: $gray-100;
+  border: 1px solid $gray-200;
+  border-radius: 5px;
+  padding: 0.5em 0.8em;
+  color: $gray-500;
+  font-size: 1em;
+  font-family: inherit;
+  outline: 0 solid $crimson-300;
+  transition: outline 0.1s ease;
+  &:focus-visible {
+    outline-width: 2px;
+  }
+  &:focus {
+    outline-width: 2px;
+  }
+  &::placeholder {
+    opacity: 0.6;
+  }
+}

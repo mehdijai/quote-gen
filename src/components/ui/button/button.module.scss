@@ -1,0 +1,85 @@
+.button {
+  font-size: 1em;
+  font-family: inherit;
+  border: none;
+  border-radius: 5px;
+  // box-shadow: 0 0 3px 0px rgba($gray-300, 0.5);
+  padding: 0.5em 0.9em;
+  cursor: pointer;
+  transition-property: background-color, border-radius, color, box-shadow;
+  transition-duration: 400ms;
+  transition-timing-function: cubic-bezier(0.33, 0.92, 0.25, 0.87);
+  position: relative;
+
+  @include button-style;
+
+  &.is-icon {
+    padding: 0.5em;
+    height: fit-content;
+    width: fit-content;
+    aspect-ratio: 1/1;
+  }
+
+  // &.c-default {
+  //   background-color: $white;
+  //   color: $gray-500;
+
+  //   &:hover {
+  //     background-color: $gray-100;
+  //     color: $gray-400;
+  //     box-shadow: unset;
+  //   }
+  // }
+
+  // &.c-primary {
+  //   background-color: $crimson-300;
+  //   color: $white;
+  //   &:hover {
+  //     background-color: $white;
+  //     color: $crimson-300;
+  //     box-shadow: unset;
+  //     border-radius: 2px;
+  //     outline: 1px solid currentColor;
+  //     outline-offset: -0px;
+  //   }
+  // }
+
+  // &.c-secondary {
+  //   background-color: $blue-300;
+  //   color: $white;
+  //   &:hover {
+  //     background-color: $white;
+  //     color: $blue-300;
+  //     box-shadow: unset;
+  //     border-radius: 2px;
+  //     outline: 1px solid currentColor;
+  //     outline-offset: -0px;
+  //   }
+  // }
+
+  // &.c-error {
+  //   background-color: $error-300;
+  //   color: $white;
+  //   &:hover {
+  //     background-color: $white;
+  //     color: $error-300;
+  //     box-shadow: unset;
+  //     border-radius: 2px;
+  //     outline: 1px solid currentColor;
+  //     outline-offset: -0px;
+  //   }
+  // }
+
+  // &.c-warning {
+  //   background-color: $warn-300;
+  //   color: $white;
+  //   &:hover {
+  //     background-color: $white;
+  //     color: $warn-300;
+  //     box-shadow: unset;
+  //     border-radius: 2px;
+  //     outline: 1px solid currentColor;
+  //     outline-offset: -0px;
+  //   }
+  // }
+}
