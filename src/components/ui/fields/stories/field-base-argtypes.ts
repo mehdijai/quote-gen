@@ -3,7 +3,7 @@ import { Control } from "@storybook/blocks";
 export default {
   label: {
     control: "text" as Control,
-    description: "Label text for the text field",
+    description: "Label text for the field",
     table: {
       defaultValue: {
         summary: "undefined",
@@ -15,7 +15,7 @@ export default {
   },
   placeholder: {
     control: "text" as Control,
-    description: "Placeholder text for the text field",
+    description: "Placeholder text for the field",
     table: {
       defaultValue: {
         summary: "undefined",
